@@ -50,6 +50,22 @@ Fit and evaluate three models; our metric is accuracy:
 Update this README with a brief summary (~2 paragraphs) of the dataset, methods and results (i.e. model accuracy), 
 comparing the test results on your two models and the baseline. 
 Include which author is predicted by the zero rule baseline.
+--------------------------------------------------------
+Numpy array has shape (66, 176)
+The data contain 66 articles and 176 function words as features. 
+The training data is from federalist_dev.json. 
+The test data is from federalist_test.json
+The features used are function words from ewl_function_words.txt. 
+
+
+The accuracy for the baseline is 0.8125
+The accuracy for Bernoulli NB model is 0.9375
+The accuracy for multinomial NB model is 0.9375
+
+The multinomial NB model and Bernoulli NB model has the same accuracy on the test dataset.
+Thea author predicted by the zero rule baseline is Hamilton. 
+
+
 
 _Naive Bayes is *deterministic*, meaning the model's probability estimates are always the same, given the same inputs. 
 However, your random split may be different each time, depending on your implementation. 
