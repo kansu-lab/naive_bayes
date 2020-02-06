@@ -58,11 +58,11 @@ The test data is from federalist_test.json
 The features used are function words from ewl_function_words.txt. 
 
 
-The accuracy for the baseline is 0.8125
-The accuracy for Bernoulli NB model is 0.9375
+The accuracy for the baseline is 0.6875
+The accuracy for Bernoulli NB model is 0.8125
 The accuracy for multinomial NB model is 0.9375
 
-The multinomial NB model and Bernoulli NB model has the same accuracy on the test dataset.
+The multinomial NB model has the better accuracy on the test dataset.
 Thea author predicted by the zero rule baseline is Hamilton. 
 
 

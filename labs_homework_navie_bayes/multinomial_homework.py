@@ -37,6 +37,7 @@ def main(data_file, vocab_path):
     # TODO: load the author names into a vector y, mapped to 0 and 1, using functions from util.py
 
     labels_map = labels_to_key(authors)
+    print(labels_map)
     # y output, a list of zeros and ones, 相对应，第几篇文章里面是什么
     # y is the golden standard, it is used for both training, and evaluation
     y = np.asarray(labels_to_y(authors, labels_map))
@@ -72,9 +73,10 @@ def main(data_file, vocab_path):
     # TODO: fit the zero rule
     train_y = train[1]
     most_frequent_class = find_zero_rule_class(train_y)
+    print(f"the most frequent class is {most_frequent_class}")
     test_predictions = apply_zero_rule(test[0], most_frequent_class)
     test_accuracy= calculate_accuracy(test_predictions,test_y)
-    print(f" the accuracy for the baseline is {accuracy}")
+    print(f" the accuracy for the baseline is {test_accuracy}")
 
 
 
@@ -85,6 +87,10 @@ if __name__ == '__main__':
                         help='path to author dataset')
     parser.add_argument('--function_words_path', type=str, default="ewl_function_words.txt",
                         help='path to the list of words to use as features')
+    parser.add_argument('--test_path',type=str, default="federalist_test.json",
+                        help='path to author dataset')
     args = parser.parse_args()
 
     main(args.path, args.function_words_path)
+    print("*"*20)
+    main(args.path, args.function_words_path )
